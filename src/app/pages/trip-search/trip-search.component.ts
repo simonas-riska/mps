@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trip-search',
@@ -8,15 +7,15 @@ import { Router } from '@angular/router';
 })
 export class TripSearchComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  searchAddressTo = "";
+  searchAddressTo: string = "";
   searchAddressFrom: string = "";
-  Date: Date | undefined;
-  i: number | undefined;
+  searchDate: Date | undefined;
+  searchPrice: number | undefined;
 
   trips: { id: number, fromAddress: string, fromCity: string, fromCountry: string, toAddress: string, toCity: string, toCountry: string, date: string, price: string, freeSeats: number, driversName: string, driversRating: number}[] = [
     {id: 1, fromAddress: "Saulėtekio al. 11", fromCity: "Vilnius", fromCountry: "Lietuva", toAddress: "Vilniaus g. 27", toCity: "Vilnius", toCountry: "Lietuva", date: "2022-10-31", price: "2", freeSeats: 3, driversName: "Simon R.", driversRating: 5.00},
@@ -24,12 +23,11 @@ export class TripSearchComponent implements OnInit {
     {id: 3, fromAddress: "Oginskio g. 5", fromCity: "Vilnius", fromCountry: "Lietuva", toAddress: "Pilies g. 27", toCity: "Vilnius", toCountry: "Lietuva", date: "2022-11-01", price: "3", freeSeats: 3, driversName: "Petras P.", driversRating: 4.98}
   ];
 
-  // Funkcija, kuri apskaiciuoja maksimalia keliones kaina
-  max(i: number): number {
+  findMaxPriceOfTrip(): number {
     let maxTripPrice = 0;
-    for (let i = 0; i < this.trips.length; i++) {
-      if(parseInt(this.trips[i].price) > maxTripPrice) {
-        maxTripPrice = parseInt(this.trips[i].price);
+    for (let trip of this.trips) {
+      if (parseInt(trip.price) > maxTripPrice) {
+        maxTripPrice = parseInt(trip.price);
       }
     }
     return maxTripPrice;
