@@ -1,0 +1,37 @@
+<div class="homepage">
+    <div class="welcoming-text">
+        <div class="title">Pridėti kelionę</div>
+    </div>
+    <div class="form">
+        <div class="form-group">
+            <label class="form-label">Iš kur?</label>
+            <input type="email" class="form-control" id="search-text" [(ngModel)]="searchAddressFrom" placeholder="Įveskite pradinį adresą" >
+            <label class="form-label">Į kur?</label>
+            <input type="email" class="form-control" id="search-text" [(ngModel)]="searchAddressTo" placeholder="Įveskite galutinį adresą">
+            <label class="form-label">Pasirinkite datą:</label>
+            <input type="date" class="form-control" id="start" [(ngModel)]="todaysDate" name="trip-start">
+            <label class="form-label">Pasirinkite kainą:</label>
+            <div class="price-range">
+                <input type="range" class="form-control" id="cowbell" [(ngModel)]="searchPrice" name="cowbell" min="0" [max]=calculateMaxTripPrice() value="0" step="0.01">
+                <input id="price-range-text" [(ngModel)]="searchPrice" type="email" [placeholder]="searchPrice? searchPrice : 'Įveskite kainą'">
+            </div>
+            <label class="form-label">Kiek vietų?</label>
+            <select name="education">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+        </div>
+    </div>
+    <div class="buttons">
+        <div class="homepage-button">
+            <div class="button-icon">
+                <img class="search-icon" src="assets/icons/add.svg">
+            </div>
+            <div class="button-text">Pridėti kelionę</div>
+        </div>
+    </div>
+</div>
+
+<!-- Is kur, i kur, data, kaina, laisvos vietos-->

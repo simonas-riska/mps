@@ -1,0 +1,227 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url(../../../assets/fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url(../../../assets/fonts/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(../../../assets/fonts/OpenSans-Regular.ttf);
+}
+
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    background-image: url(../../../assets/illustrations/undraw_traveling_re_s0cf.svg);
+    background-repeat: no-repeat;
+    background-size: auto 500px;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.search {
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Poppins-Bold';
+    font-size: 32px;
+    margin-top: 100px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.trips {
+    width: 100%;
+    height: 100%;
+}
+.trip {
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Poppins';
+    width: 900px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgb(179, 178, 178);
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+.trip-driver-rating {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.trip-driver-rating-star-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.reservation-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #33a004;
+    color: white;
+    font-family: 'Raleway';
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    height: 35px;
+    width: 120px;
+}
+
+.trip-addresses {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    justify-content: center;
+    align-items: center;
+}
+
+.trip-address {
+    display: flex;
+    flex-direction: row;
+    width: 235px;
+}
+
+.trip-address-icon img {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.trip-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.trip-date {
+    display: flex;
+    flex-direction: row;
+}
+.trip-date-icon img {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.trip-price {
+    display: flex;
+    flex-direction: row;
+}
+.trip-price-icon img {
+    width: 15px;
+    height: 15px;
+    margin-top: 2px;
+    margin-right: 5px;
+}
+.trip-free-seats {
+    display: flex;
+    flex-direction: row;
+}
+.trip-free-seats-icon img{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.trip-driver-name {
+    display: flex;
+    flex-direction: row;
+}
+
+.trip-driver-name-icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.example-form {
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 30px;
+    color: black;
+  }
+  
+  .example-full-width {
+    width: 100%;
+    background-color: rgb(209, 203, 203);
+    border-radius: 10px;
+    font-family: "Poppins";
+    color: black;
+  }
+
+
+  .form-group {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Poppins';
+      font-size: 12px;
+      width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+  }
+
+  .form-label {
+      margin-top: 15px;
+      margin-bottom: 3px;
+  }
+
+  ::ng-deep.swal2-title {
+    font-family: "Poppins";
+  }
+
+  ::ng-deep.swal2-html-container {
+    font-family: "Poppins";
+  }
+
+  ::ng-deep.swal2-confirm {
+    font-family: "Poppins";
+  }
+
+  input {
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: transparent;
+    font-family: 'Poppins';
+    border-bottom: 1px solid rgb(156, 156, 156);
+  }
+
+  .price-range {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #cowbell {
+    width: 100%;
+  }
+
+  #price-range-text {
+    margin-left: 20px;
+    width: 90px;
+  }
