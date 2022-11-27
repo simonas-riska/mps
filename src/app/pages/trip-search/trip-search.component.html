@@ -1,1 +1,64 @@
 <div class="bg"></div>
+<div class="search">
+    <div class="title">Rasti kelionę</div>
+    <div class="filter">
+        <div class="form-group">
+            <label class="form-label" for="search-text">Iš kur?</label>
+            <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
+              [(ngModel)]="searchAddressFrom" placeholder="Įveskite pradinį adresą" >
+            <label class="form-label" for="search-text">Į kur?</label>
+            <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
+              [(ngModel)]="searchAddressTo" placeholder="Įveskite galutinį adresą">
+            <label class="form-label" for="start">Pasirinkite datą:</label>
+            <input type="date" class="form-control" id="start" [(ngModel)]="Date" name="trip-start">
+            <div>{{Date}}</div>
+            <label class="form-label" for="cowbell">Pasirinkite kainą:</label>
+            <div class="price-range">
+                <input type="range" class="form-control" id="cowbell" [(ngModel)]="i" name="cowbell" min="0" [max]=max(1) value="0" step="0.01">
+                <input id="price-range-text" [(ngModel)]="i" type="email" [placeholder]="i? i : 'Įveskite kainą'">
+            </div>
+        </div>
+    </div>
+    <div class="trips">
+        <div *ngFor="let trip of trips | addressToFilter : searchAddressTo | addressFromFilter : searchAddressFrom | dateFilter : Date | priceFilter : i" class="trip">
+            <div class="trip-addresses">
+                <div class="trip-address">
+                    <div class="trip-address-icon"><img src="assets/icons/location-from.svg"></div>
+                    <div class="trip-address-name">{{trip.fromAdress}}, {{trip.fromCity}}, {{trip.fromCountry}}</div>
+                </div>
+                <div class="trip-adress-arrow"><img src="assets/icons/arrow-down-svgrepo-com.svg"></div>
+                <div class="trip-address">
+                    <div class="trip-address-icon"><img src="assets/icons/location-to.svg"></div>
+                    <div class="trip-address-name">{{trip.toAdress}}, {{trip.toCity}}, {{trip.toCountry}}</div>
+                </div>
+            </div>
+            <div class="trip-info">
+                <div class="trip-date">
+                    <div class="trip-date-icon"><img src="assets/icons/date-calendar-svgrepo-com.svg"></div>
+                    <div class="trip-date-name">{{trip.date}}</div>
+                </div>
+                <div class="trip-price">
+                    <div class="trip-price-icon"><img src="assets/icons/cash-svgrepo-com.svg"></div>
+                    <div class="trip-price-name">{{trip.price}} €</div>
+                </div>
+                <div class="trip-free-seats">
+                    <div class="trip-free-seats-icon"><img src="assets/icons/seat-svgrepo-com.svg"></div>
+                    <div class="trip-free-seats-name">{{trip.freeSeats}} laisvos vietos</div>
+                </div>
+            </div>
+            <div class="trip-driver">
+                <div class="trip-driver-name">
+                    <div class="trip-driver-name-icon"><img src="assets/icons/delivery-man-driver-svgrepo-com.svg"></div>
+                    <div class="trip-driver-name-name">{{trip.driversName}}</div>
+                </div>
+                <div class="trip-driver-rating">
+                    <div class="trip-driver-rating-star-icon"><img src="assets/icons/star-svgrepo-com.svg"></div>
+                    <div class="trip-driver-rating-star-count">{{trip.driversRating | number : '1.2-2'}}/5.00</div>
+                </div>
+            </div>
+            <div class="reservation-button" [swal]='{title: "Sveikiname!", text: "Kelionės registracija buvo sėkminga", icon: "success", confirmButtonText: "Ačiū!"}'>
+                <div class="reservation">Rezervuoti</div>
+            </div>
+        </div>
+    </div>
+</div>
